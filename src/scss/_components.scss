@@ -152,6 +152,17 @@
   }
 }
 
+.bday-date {
+  font-size: 1.6rem;
+  margin-top: 0.6rem;
+  letter-spacing: 0.08em;
+  opacity: 0.9;
+
+  @media (max-width: 800px) {
+    font-size: 2rem;
+  }
+}
+
 // SCROLL
 
 .scroll {
@@ -175,6 +186,12 @@
 .text {
   @include position(50%, 0, 0, 0);
   text-align: center;
+  line-height: 1.55;
+  padding: 0 1rem;
+
+  p {
+    margin-bottom: 1.6rem;
+  }
 }
 
 // BUTTONS

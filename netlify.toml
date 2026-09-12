@@ -3,6 +3,10 @@
   publish = "./dist/"
   command = "npm run build"
 
-[template.environment]
-  NAME = "enter Name of the receiver"
-  PIC = "enter web url of the receiver's image"
+[build.environment]
+  NODE_VERSION = "18"
+  NAME = "Anjali"
+  NICKNAME = "Anjali"
+  PIC = "Asset.png"
+  HBD_MSG = "Happy Birthday, my love ❤️🎂"
+  SCROLL_MSG = "birthday-message.txt"

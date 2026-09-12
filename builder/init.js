@@ -16,13 +16,26 @@ if (!process.env.PIC) throw new Error("Please specify PIC in environment.");
 const picPath = process.env.PIC;
 const msgPath = process.env.SCROLL_MSG;
 
+const resolveLocalFile = (fileName) => {
+  const candidates = [
+    path.join(__dirname, "../local/", fileName),
+    path.join(__dirname, "../src/resources/img/", fileName),
+    path.join(__dirname, "../", fileName),
+  ];
+  const found = candidates.find((candidate) => fs.existsSync(candidate));
+  if (!found) {
+    throw new Error(`Could not find ${fileName} in local/, src/resources/img/, or project root.`);
+  }
+  return found;
+};
+
 //Local initialization
 const setLocalData = async () => {
   try {
-    const pic = path.join(__dirname, "../local/", picPath);
+    const pic = resolveLocalFile(picPath);
     let markup = "";
     if (msgPath) {
-      const text = fs.readFileSync(path.join(__dirname, "../local/", msgPath), {
+      const text = fs.readFileSync(resolveLocalFile(msgPath), {
         encoding: "utf-8",
       });
       markup = generateMarkupLocal(text);
