@@ -5,8 +5,8 @@
 
 [build.environment]
   NODE_VERSION = "18"
-  NAME = "Anjali"
-  NICKNAME = "Anjali"
+  NAME = ""
+  NICKNAME = ""
   PIC = "Asset.png"
   HBD_MSG = "Happy Birthday, my love ❤️🎂"
   SCROLL_MSG = "birthday-message.txt"
